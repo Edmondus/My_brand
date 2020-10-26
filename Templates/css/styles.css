@@ -66,6 +66,15 @@ a {
     font-size: 2rem;
     left: 15%;
 }
+.skillset{
+   
+    position: absolute;
+    top: 30%;
+    padding: 2rem;
+    font-size: 2rem;
+    left: 60%;
+
+}
 .skills{
     background-color: rgb(168, 168, 167);
     position: absolute;
