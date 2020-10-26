@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=New+Rocker&family=Roboto+Mono&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.home-web{
+    background: url('../assets/pic\ waki.jpg') no-repeat center fixed;
+    background-size: cover;
+    height: 100vh;
+    background-blend-mode: overlay;
+    background-color: rgba(229,229,229, 0.50);
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-c{
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 50px;
+}
+
+ nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;  
+}
+.p-info{
+    display: flex;
+    justify-content: space-between;
+    margin: auto 55px;
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.menu-items{
+    font-size: 1.5rem;
+    margin: 0 20px;
+}
+.menu-items li{
+    padding: 0 10rem 0 0;
+}
+
+.logo{
+    font-family: "New Rocker";
+}
+.aboutext{
+    color: rgba(228, 225, 225, 0.918);
+    position: absolute;
+    background-color: black;
+    padding: 30px;
+    font-size: 2rem;
+    left: 15%;
+}
+.skills{
+    background-color: rgb(168, 168, 167);
+    position: absolute;
+    top: 45%;
+    padding: 2rem;
+    font-size: 3rem;
+    left: 60%;
+    
+}
+
+
+aside {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: left;
+    font-style: italic;
+}
+
+#myname{
+    font-family: 'Montserrat';
+    font-size: 3.3rem;
+}
+
+#webimg{
+    width: 250px;
+    height: 300px;
+}
+.intro-c{
+    display: flex;
+    flex-direction: column;
+}
+.proffession-sect{
+    align-self: flex-end;
+    padding: 15px 10px;
+    margin-top: 25px;
+    border-radius: 8px;
+    font-family: 'Roboto Mono';
+    font-size: 2rem;
+    background-color: #000000;
+    color: rgb(209, 209, 209);
+}
+
+@media only sreen and (max-width: 600px ){
+    .home-web .p-info {
+        display: flex;
+        flex-direction: column;
+    }
+}
