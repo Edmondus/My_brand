@@ -1,27 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=New+Rocker&family=Roboto+Mono&display=swap');
 
+/* ---------- General styles ---------- */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     background: transparent;
 }
-
 a {
     text-decoration: none;
     color: black;
 }
-
-.home-web{
-    background: url('../assets/pic\ waki.jpg') no-repeat center fixed;
-    background-size: cover;
-    height: 100vh;
-    background-blend-mode: overlay;
-    background-color: rgba(229,229,229, 0.50);
-    display: flex;
-    flex-direction: column;
-}
-
 .nav-c{
     z-index: 100;
     display: flex;
@@ -29,112 +18,27 @@ a {
     justify-content: space-between;
     margin: 20px 50px;
 }
-
  nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-height: 8vh;  
 }
-.p-info{
-    display: flex;
-    justify-content: space-between;
-    margin: auto 55px;
-    width: 100;
+.selected-menu-item{
+    font-weight: bolder;
+    text-decoration: underline;
 }
-
+.logo{
+    font-family: "New Rocker";
+}
 .menu {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-
 .menu-items{
     font-size: 1.5rem;
     margin: 0 20px;
-}
-.menu-items li{
-    padding: 0 10rem 0 0;
-}
-
-.logo{
-    font-family: "New Rocker";
-}
-.aboutext{
-    color: rgba(228, 225, 225, 0.918);
-    position: absolute;
-    background-color: black;
-    padding: 30px;
-    font-size: 1.5rem;
-    left: 15%;
-    font-family: Roboto Mono;
-font-style: normal;
-font-weight: normal;
-}
-.skillset{
-    font-family: Roboto Mono;
-    position: absolute;
-    top: 30%;
-    padding: 2rem;
-    font-size: 2rem;
-    left: 60%;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 63px;
-
-}
-.skills{
-    background-color: rgb(168, 168, 167);
-    position: absolute;
-    top: 45%;
-    padding: 2rem;
-    font-size: 3rem;
-    left: 60%;
-    
-    
-}
-.skills-text{
-    font-family: Roboto Mono;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 63px;
-    padding: 0 20%;
-
-}
-
-
-aside {
-    width: 30%;
-    padding-left: 15px;
-    margin-left: 15px;
-    float: left;
-    font-style: italic;
-}
-
-#myname{
-    font-family: 'Montserrat';
-    font-size: 3.3rem;
-}
-
-#webimg{
-    width: 250px;
-    height: 300px;
-}
-.intro-c{
-    display: flex;
-    flex-direction: column;
-}
-.proffession-sect{
-    align-self: flex-end;
-    padding: 15px 10px;
-    margin-top: 25px;
-    border-radius: 8px;
-    font-family: 'Roboto Mono';
-    font-size: 2rem;
-    background-color: #000000;
-    color: rgb(209, 209, 209);
 }
 footer {
     text-align: center;
@@ -146,6 +50,109 @@ footer {
     bottom: 0;
 
   }
+/* -------------landing page ---------- */
+
+.home-web{
+    background: url('../assets/pic\ waki.jpg') no-repeat center fixed;
+    background-size: cover;
+    height: 100vh;
+    background-blend-mode: overlay;
+    background-color: rgba(229,229,229, 0.50);
+    display: flex;
+    flex-direction: column;
+}
+.p-info{
+    display: flex;
+    justify-content: space-between;
+    margin: auto 55px;
+    width: 100;
+}
+.intro-c{
+    display: flex;
+    flex-direction: column;
+}
+#myname{
+    font-family: 'Montserrat';
+    font-size: 3.3rem;
+}
+.proffession-sect{
+    align-self: flex-end;
+    padding: 15px 10px;
+    margin-top: 25px;
+    border-radius: 8px;
+    font-family: 'Roboto Mono';
+    font-size: 2rem;
+    background-color: #000000;
+    color: rgb(209, 209, 209);
+}
+
+/* ------- About Page --------- */
+
+.about-web{
+    width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+.aboutext{
+    color: rgba(228, 225, 225, 0.918);
+    background-color: black;
+    padding: 5%;
+    font-size: 1.5rem;
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    width: 50%;
+}
+.about-text-container{
+    margin-left: 5%;
+}
+.skillset-title{
+    font-family: Roboto Mono;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 63px;
+
+}
+.skills{
+    background-color: rgb(168, 168, 167);
+    font-size: 3rem;
+    width: 100%; 
+    padding: auto; 
+}
+.skills-text{
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 63px;
+    padding: 50px;
+    font-size: 2rem;
+
+}
+.skillset-container{
+    float: right;
+    width: 45%;
+    margin-right: 5%;
+    margin-bottom: 20vh;
+}
+.about-content{
+    margin-bottom: 0px;
+}
+aside {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: left;
+    font-style: italic;
+}
+
+#webimg{
+    width: 250px;
+    height: 300px;
+}
+
+/* ------- media query for both Home and About pages --------- */
+
 
 @media only screen and (max-width: 600px){
    
@@ -154,7 +161,35 @@ footer {
         flex-direction: column;
         margin-top: 50px;
     }
-
+    .about-text-container{
+        margin-left: 25px;
+        width: 100%;
+    }
+    .aboutext{
+        padding: 15px;
+        width: 90%;
+    }
+    .skillset-container{
+        float: none;
+        margin-right: 0vh;
+        width: 100%;
+        margin-left: 25px;
+        margin-top: 25px; 
+    }
+    .about-web{
+        width: 145%;
+        margin: auto;
+    }
+    .nav-c{
+        width: 100%;
+    }
+    .about-content{
+        margin-left: 80px;
+        margin-top: 30px;
+    }
+    .skillset-container{
+        margin-top: 30px;
+    }
 
 
 }
