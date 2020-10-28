@@ -87,8 +87,9 @@ footer {
     background-color: #000000;
     color: rgb(209, 209, 209);
 }
-.menu-items.selected{
+.selected-menu-item{
     font-weight: bolder;
+    text-decoration: underline;
 }
 
 /* ------- About Page --------- */
@@ -110,6 +111,12 @@ footer {
 }
 .about-text-container{
     margin-left: 5%;
+}
+
+
+.contact_card {
+    padding: 30px 100px;
+    margin-top: 60px;
 }
 .skillset-title{
     font-family: Roboto Mono;
@@ -208,9 +215,9 @@ aside {
 .social-media-handle {
     color: white;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     text-align: left;
-    margin: 20px 0 20px 30px;
+    margin: 20px 0 20px 50px;
 }
 .social img{
     padding: 0 5%;
@@ -218,23 +225,24 @@ aside {
 .contact-form{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     font-family: roboto mono;
     width: 40%;
 }
 input{
     border: 0px solid white;
-    box-shadow: 1px 1px 2px 2px #808080;
-    border-radius: 20px;
+    box-shadow: 1px 1px 2px 1px #808080;
+    border-radius: 5px;
     width: 70%;
     padding: 10px;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 textarea{
-    width: 80%;
+    width: 70%;
     outline: none;
-    margin: 20px 0;
-    box-shadow: 1px 1px 2px 2px #808080;
+    margin: 30px 0;
+    border: 0px solid white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px #808080;
 }
 
 .form-title{
@@ -247,18 +255,47 @@ textarea{
     color: white;
     background: black;
     align-self: flex-end;
-    margin-right: 100px;
+    margin-right: 30%;
 }
 .sender{
     display: flex;
     flex-direction: column;
 }
 
-.content {
+.contact-content {
     display: flex;
     justify-content: space-around;
     padding: 0 50px;
     margin: auto 0;
+}
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+
+  }
+  @media only screen and (max-width: 600px){
+    
+    .contact-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 100px;
+        
+    }
+    .contact-form{
+        width: 100%;
+    }
+    .contact-web{
+        width: 100vh;
+    }.contact_card{
+        margin-bottom: 20px;
+    }
+
 }
 
 
