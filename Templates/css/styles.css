@@ -91,6 +91,9 @@ footer {
     font-weight: bolder;
     text-decoration: underline;
 }
+.menu-items.selected{
+    font-weight: bolder;
+}
 
 /* ------- About Page --------- */
 
