@@ -47,10 +47,12 @@ footer {
     padding: 30px;
     background-color: black;
     color: white;
-    position: fixed;
     width: 100%;
+    position: fixed;
     bottom: 0;
-
+  }
+  body{
+      margin-bottom: 50px;
   }
 /* -------------landing page ---------- */
 
@@ -279,16 +281,7 @@ textarea{
     padding: 0 50px;
     margin: auto 0;
 }
-footer {
-    text-align: center;
-    padding: 30px;
-    background-color: black;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 
-  }
   @media only screen and (max-width: 600px){
     
     .contact-content {
@@ -580,6 +573,7 @@ margin: 10px 0px;
 }
 
 
+
 @media only screen and (max-width: 600px){
     
     .post-img{
@@ -616,164 +610,145 @@ margin: 10px 0px;
 }
 
 
-/*-----contact page-----------*/
+/* ------- Admin dashboard ----- */
 
+.logo span{
+    font-family: Roboto Mono;
+    font-size: 0.5em;
+    padding-left: 3px;
+}
+.header-bar{
 
-
-.social-media-handle a{
-    color: white;
+    float: right;
 }
-.social-media-handle {
-    color: white;
-    display: flex;
-    align-items: center;
-    text-align: left;
-    margin: 20px 0 20px 50px;
-}
-.social img{
-    padding: 0 5%;
-}
-.contact-form{
-    display: flex;
-    flex-direction: column;
-    font-family: roboto mono;
-    width: 40%;
-}
-input{
-    border: 0px solid white;
-    box-shadow: 1px 1px 2px 1px #808080;
-    border-radius: 20px;
-    width: 70%;
-    padding: 10px;
-    margin: 30px 0;
-}
-textarea{
-    width: 80%;
-    outline: none;
-    margin: 30px 0;
-    box-shadow: 1px 1px 2px  #808080;
-}
-
-.form-title{
-    font-size: x-large;
-}
-
-.send_btn {
+.crt-nw-cntnt-btn{
     padding:  10px 15px;
-    border-radius: 5px;
+    border-radius: 12px;
     color: white;
     background: black;
     align-self: flex-end;
-    margin-right: 100px;
+    margin: 10px 50px 10px 0px;
 }
-.sender{
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 50px;
-    margin: auto 0;
-}
-footer {
-    text-align: center;
-    padding: 30px;
-    background-color: black;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-
-  }
-
-
-  /* -------blog page ----------*/
-
-  .blog-nav{
-      
-    text-align: center;
-    padding: 5px;
-    background-color: black;
-    color: white;
-    width: 100%;
-    top: 0;
-    
-  }
+.edit-prfl{
+    display: block;
+    margin: 0 0 0 40%;
+    text-decoration: underline;
+    font-style: italic;
   
-  #visit-my-website{
-      text-decoration: underline;
-      text-decoration-color: black;
-      font-style: italic;
-      color: black;
-  }
-
-  .blog-header{
-      background-color: #c4c4c4;
-      color: rgb(5, 5, 5);
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      font-family: roboto mono;
-      
-  }
-  #login-btn{
-      color: white;
-      border: 2px solid white;
-      border-radius: 30px;
-      padding: 2px 10px;
-  }
-  .cards{
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding-bottom: 50px;
-  }
- .card{
-     background-color: rgb(241, 236, 235);
-     border: 0px solid black ;
-     border-radius: 12px;
-     padding: 1em 2em;
-     margin: 4%;
- }
-  .post-desc{
-
-      word-wrap: break-word;
-      padding: 0 10px;
-
-  }
-  .img-and-text{
-      display: flex;
-      justify-content: space-between;
-      width: 30em;
-
-  }
-
-.post-img {
+}
+.artcl-hdr{
+    text-decoration: underline;
     width: 50%;
+    text-align: center;
+    margin-top: 20px;
+    
 }
- 
+.articles-container{
+    width: 50%;
+    margin-left: 10%;
+}
+
+.editor-component{
+    padding:  2px 5px;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    background: black;
+    align-self: flex-end;
+    
+}
+.date-of-post{
+    display: block;
+    margin: 5px;
+    
+}
+.card{
+    width: max-content;
+}
+.adm-bdy{
+    margin-bottom: 100px;
+}
+
 @media only screen and (max-width: 600px){
-    .img-and-text{
-        display: block;
+    .crt-nw-cntnt-btn{
+        margin: 10px 10px 0px 0px;
+    }
+    .edit-prfl{
+        margin: 0 0 10px 40%;
+    }
+    .articles-container{
+        width: 80%;
+        margin-top: 50px;
+    }
+    .card{
         width: 100%;
-        justify-content: space-between;
-        word-wrap: break-word;
-  
     }
+}
 
-    .card {
-        width: 100%;
+/* ------- Create new content -------- */
+.new-cont{
+    background-color: #eee8e8;
+    margin-bottom: 100px;
+}        
+.content-contaier{
+    width: 70%;
+    align-content: center;
+    margin: auto;
+}
+.new-content-header{
+    text-align: center;
+    margin: 30px auto;
+}
+.content-contaier input{
+    border-radius: 2px;
+    border: 1px solid rgb(145, 140, 140);
+}
+.new-cnt-container{
+background-color: #e6e3e3;
+width: 70%;
+
+}
+.content-contaier label{
+    display: block;
+}
+#file_chooser{
+    width: fit-content;
+}
+.pst-and-back-btn{
+   margin-left: 50%;
+   margin-bottom: 30px;
+}
+#pst-btn{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 1px 1px 2px 1px #808080;
+    margin: 0 5px;
+}
+#new-cnt-text{
+    width: 70%;
+    
+}
+@media only screen and (max-width: 600px){
+    .pst-and-back-btn{
+        margin-left: 35%;
+        display: inline;
+
     }
-
-    .blog-header{
-        display: flex;
-        justify-content: space-around;
-        padding: 0;
-        font-size: 0.8rem;
-
+    #pst-btn{
+       margin-bottom: 20px;
     }
+    .new-cnt-container{
+       width: 100%;
+        
+        }
+        #file_chooser{
+            width: 100%
+        }
+        #new-cnt-text{
+            width: 100%;
+            
+        }
 }
 
 
@@ -781,3 +756,6 @@ footer {
 
 
 
+
+    
+    
