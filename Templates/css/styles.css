@@ -40,7 +40,9 @@ a {
     display: flex;
     justify-content: space-between;
     margin: auto 55px;
+    width: 100;
 }
+
 .menu {
     display: flex;
     flex-direction: row;
@@ -63,8 +65,24 @@ a {
     position: absolute;
     background-color: black;
     padding: 30px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     left: 15%;
+    font-family: Roboto Mono;
+font-style: normal;
+font-weight: normal;
+}
+.skillset{
+    font-family: Roboto Mono;
+    position: absolute;
+    top: 30%;
+    padding: 2rem;
+    font-size: 2rem;
+    left: 60%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 63px;
+
 }
 .skills{
     background-color: rgb(168, 168, 167);
@@ -74,6 +92,16 @@ a {
     font-size: 3rem;
     left: 60%;
     
+    
+}
+.skills-text{
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 63px;
+    padding: 0 20%;
+
 }
 
 
@@ -108,10 +136,26 @@ aside {
     background-color: #000000;
     color: rgb(209, 209, 209);
 }
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 
-@media only sreen and (max-width: 600px ){
+  }
+
+@media only screen and (max-width: 600px){
+   
     .home-web .p-info {
         display: flex;
         flex-direction: column;
+        margin-top: 50px;
     }
+
+
+
 }
+    
