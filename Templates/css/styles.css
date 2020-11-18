@@ -94,6 +94,9 @@ footer {
 .menu-items.selected{
     font-weight: bolder;
 }
+.menu-items.selected{
+    font-weight: bolder;
+}
 
 /* ------- About Page --------- */
 
@@ -357,7 +360,6 @@ footer {
      margin: 4%;
  }
   .post-desc{
-
       word-wrap: break-word;
       padding: 0 10px;
 
@@ -401,7 +403,109 @@ footer {
 }
 
 
+/* ---------- login page ------------ */
 
 
+
+.login_btn {
+    padding:  5px 25px;
+    border-radius: 5px;
+    color: white;
+    background: black;
+    align-self: flex-start;
+    font-family: Roboto Mono;
+    border-style: none;
+    margin: auto 20px auto 0;
+    
+}
+.sign-up{
+    background: #404040;
+}
+
+.butons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+.mrgn-btm{
+    margin-bottom: 20px;
+}
+
+.lgn-div{
+    display: flex;
+    width: 100%;
+}
+.admn-ch-box{
+    width: 15px;
+}
+
+.lgn-as-admn{
+    display: flex;
+}
+#lgn-as-admn-txt{
+    padding-top: 27px;
+    padding-left: 8px;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    font-family: roboto mono;
+    width: 100%;
+}
+.login-name{
+    width: 100%;
+
+}
+.login-email{
+    width: 100%;
+
+}
+#login-back-btn{
+border-radius: 5px;
+margin-left: 70%;
+
+}
+#lgn-content{
+   flex-direction: column;
+   justify-content: space-between;
+   width: 80%;
+   margin: auto;
+
+}
+.lgn-form{
+    width: 50%;
+    height: 70vh;
+    border: 0px solid white;
+    box-shadow: 1px 1px 2px 1px #808080;
+    margin: auto;
+}
+
+
+
+@media only screen and (max-width: 600px){
+    .login-name{
+        width: 100%;
+  
+    }
+    .login-email{
+        width: 100%;
+  
+    }
+    #lgn-content{
+        padding: 0 20px;
+        width: 100%;
+    
+    }
+    .lgn-form{
+        width: 90%;
+        height: 100%;
+        padding-bottom: 5px;
+        margin: auto;
+    }
+    
+
+}
 
 
