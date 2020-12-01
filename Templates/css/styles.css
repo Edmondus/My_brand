@@ -476,9 +476,6 @@ margin-left: 70%;
     box-shadow: 1px 1px 2px 1px #808080;
     margin: auto;
 }
-.login_link{
-    margin: auto 0;
-}
 
 
 
@@ -510,9 +507,6 @@ margin-left: 70%;
 .blg-pst-content{
     font-family: Roboto Mono;
     margin: auto 50px;
-}
-.blog-post-body{
-    margin-bottom: 100px;
 }
 .blg-pst-txt{
     width: 90%;
@@ -634,12 +628,10 @@ margin: 10px 0px;
     background: black;
     align-self: flex-end;
     margin: 10px 50px 10px 0px;
-    display: block;
-    width: 80%;
 }
 .edit-prfl{
     display: block;
-    /* margin: 0 0 0 40%; */
+    margin: 0 0 0 40%;
     text-decoration: underline;
     font-style: italic;
   
@@ -758,8 +750,6 @@ width: 70%;
             
         }
 }
-
-
 
 
 
