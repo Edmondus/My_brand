@@ -8,3 +8,4 @@ router
     .get('/',getAllMessages);
 
 export default router;    
+ 
