@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test mocha --timeout 30000 ./tests/**.test.js --require @babel/register --exit",
+    "coverage":"nyc npm test"
+    
   },
   "repository": {
     "type": "git",
@@ -21,10 +23,15 @@
     "@babel/polyfill": "^7.12.1",
     "babel-watch": "^7.0.0",
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "colors": "^1.4.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.10.15"
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^8.2.1",
+    "mongoose": "^5.10.15",
+    "nyc": "^15.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
