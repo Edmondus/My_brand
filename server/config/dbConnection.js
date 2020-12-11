@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-        console.log('hhh', process.env.MONGO_URL);
+dotenv.config();
 
-        mongoose.connect('mongodb://localhost:27017/MybrandDB',{
+        mongoose.connect(process.env.MONGO_URL,{
             useNewUrlParser: true,
             useCreateIndex: true,
             useUnifiedTopology: true
