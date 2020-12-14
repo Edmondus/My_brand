@@ -55,7 +55,7 @@ describe("Post related tests:", async () => {
     expect(res.body).to.have.property("data");
   });
 
-  it("should update a blog post", async () => {
+  it("should update an article", async () => {
     const blogRes = await chai
       .request(app)
       .post("/articles/saveArticle")
@@ -69,6 +69,77 @@ describe("Post related tests:", async () => {
       .send(mockdata.article);
     expect(res.status).to.be.equal(200);
     expect(res.body).to.have.property("message");
+  });
+
+  it("should not update an article if no token provided", async () => {
+    const blogRes = await chai
+      .request(app)
+      .post("/articles/saveArticle")
+      .set("authorization", `Bearer ${token}`)
+      .send(mockdata.article);
+
+    const res = await chai
+      .request(app)
+      .put(`/articles/updateArticle/${blogRes.body.data._id}`)
+      .set("authorization", `Bearer ${token}e`)
+      .send(mockdata.article);
+    expect(res.status).to.be.equal(401);
+    expect(res.body).to.have.property("err");
+  });
+
+  // it("should not update an article if article does not exist", async () => {
+  //   const articleId = 12;
+
+  //   const res = await chai
+  //     .request(app)
+  //     .put(`/articles/updateArticle/${articleId}`)
+  //     .set("authorization", `Bearer ${token}`)
+  //     .send(mockdata.article);
+  //   expect(res.status).to.be.equal(404);
+  //   expect(res.body).to.have.property("err");
+  // });
+
+  it("should delete an article", async () => {
+    const blogRes = await chai
+      .request(app)
+      .post("/articles/saveArticle")
+      .set("authorization", `Bearer ${token}`)
+      .send(mockdata.article);
+
+    const res = await chai
+      .request(app)
+      .delete(`/articles/deleteArticle/${blogRes.body.data._id}`)
+      .set("authorization", `Bearer ${token}`)
+    expect(res.status).to.be.equal(200);
+    expect(res.body).to.have.property("message");
+  });
+
+  it("should not delete an article if no token provided", async () => {
+    const blogRes = await chai
+      .request(app)
+      .post("/articles/saveArticle")
+      .set("authorization", `Bearer ${token}`)
+      .send(mockdata.article);
+
+    const res = await chai
+      .request(app)
+      .delete(`/articles/deleteArticle/${blogRes.body.data._id}`)
+      .set("authorization", `Bearer e`)
+    expect(res.status).to.be.equal(401);
+    expect(res.body).to.have.property("err");
+  });
+
+  it("should get one article", async () => {
+    const blogRes = await chai
+      .request(app)
+      .post("/articles/saveArticle")
+      .set("authorization", `Bearer ${token}`)
+      .send(mockdata.article);
+
+    const res = await chai
+      .request(app)
+      .get(`/articles/${blogRes.body.data._id}`)
+    expect(res.status).to.be.equal(200);
   });
 
 });

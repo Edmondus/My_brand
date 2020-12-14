@@ -30,7 +30,35 @@ describe("User related tests:", () => {
       expect(res.status).to.be.equal(201);
       expect(res.body).to.be.a("object");
       expect(res.body).to.have.property("message");
-
-      
     });
+
+    it("Should login a user", async () => {
+      await chai
+        .request(app)
+        .post("/user/signup")
+        .send(mockdata.signUpUser);
+  
+      const res = await chai
+        .request(app)
+        .post("/user/loginuser")
+        .send(mockdata.loginUser);
+      expect(res.status).to.be.equal(200);
+      expect(res.body).to.be.a("object");
+      expect(res.body).to.have.property("token");
+    });
+
+    it("Should not login a user with invalid", async () => {
+      await chai
+        .request(app)
+        .post("/user/signup")
+        .send(mockdata.signUpUser);
+  
+      const res = await chai
+        .request(app)
+        .post("/user/loginuser")
+        .send(mockdata.loginInvalidUser);
+      expect(res.status).to.be.equal(401);
+      expect(res.body).to.be.a("object");
+    });
+
 });

@@ -2,18 +2,6 @@ import User from "../models/User";
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
 
-// export const login = (req, res) => {
-// const user= {
-//     username: 'Edmond',
-//     email: 'ndedmondus97@gmail.com'
-//     }
-
-//     jwt.sign(user, 'secretKey', (err, token) => {
-//         res.json({
-//             token: token
-//         })
-//     });
-// }
 
 export const signUp = async (req, res, next) => {
     try {
@@ -58,7 +46,7 @@ export const loginUser = async (req, res) => {
     try {
       const user = await User.findOne({userName: req.body.userName });
       if (!user) {
-        return res.status(409).json({
+        return res.status(401).json({
             success: false,
             status: 400,
             message: 'invalid email or password'
@@ -70,7 +58,7 @@ export const loginUser = async (req, res) => {
       );
       
       if (!validPassword){
-        return res.status(409).json({
+        return res.status(401).json({
             success: false,
             status: 401,
             message: 'invalid email or password'
@@ -78,7 +66,7 @@ export const loginUser = async (req, res) => {
       }
       const { _id, name, email } = user;
       const token = jwt.sign({ _id, name, email }, process.env.SECRET_KEY);
-      return res.status(409).json({
+      return res.status(200).json({
         success: true,
         status: 200,
         message: 'successfully logged in',

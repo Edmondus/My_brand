@@ -10,6 +10,7 @@ const mockdata = {
       password: "James@2020",
     },
     loginUser: {
+      userName: "edmondo",
       email: "edmond@gmail.com",
       password: "Edmond@2020",
     },
