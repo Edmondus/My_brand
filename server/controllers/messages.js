@@ -4,7 +4,7 @@ export const saveMessage = async (req, res, next) => {
     const newMessage = new Message (
         {
             senderName: req.body.senderName,
-            senderEmail: req.body.senderEmail,
+            email: req.body.email,
             messageBody: req.body.messageBody,
             date: ""
         }

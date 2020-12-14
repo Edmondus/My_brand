@@ -30,9 +30,9 @@ export const createArticle = async (req, res, next) => {
         )
         newArticle.save(function(err, prod){
             if(!err){
-                return res.status(200).json({
+                return res.status(201).json({
                     success: true,
-                    status: 200,
+                    status: 201,
                     message: 'Article created successfully',
                     data: prod
                 });
