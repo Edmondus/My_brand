@@ -4,8 +4,10 @@
   "description": "My_brand dependencies",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node index.js",
-    "test": "mocha --timeout 30000 ./tests/**.test.js --require @babel/register --exit",
+    "dev": "nodemon --exec babel-node ./src/index.js",
+    "test": "mocha --timeout 30000 ./src/tests/**.test.js --require @babel/register --exit",
+    "build": "rm -rf ./src/build && babel ./src/. --out-dir ./src/build --copy-files",
+    "start": "node ./src/build/index.js",
     "coverage": "nyc npm test"
   },
   "repository": {
@@ -43,5 +45,8 @@
     "@babel/runtime": "^7.12.5",
     "babel-loader": "^8.2.1",
     "nodemon": "^2.0.6"
+  },
+  "engines": {
+    "node": "14.1.x"
   }
 }
