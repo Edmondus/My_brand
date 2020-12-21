@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config();
-
-        mongoose.connect(process.env.MONGO_URL,{
+        mongoose.connect(process.env.NODE_ENV === 'test' ? process.env.MONGOTEST_URL : process.env.MONGO_URL,{
             useNewUrlParser: true,
             useCreateIndex: true,
             useUnifiedTopology: true

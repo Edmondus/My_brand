@@ -1,0 +1,22 @@
+{
+    "buildpacks": [
+  
+    ],
+    "env": {
+      "NPM_CONFIG_PRODUCTION": {
+        "required": true
+      },
+      "MONGO_URL": {
+        "required": true
+      },
+      "SECRET_KEY": {
+        "required": true
+      }
+    },
+    "formation": {
+    },
+    "name": "my-brand",
+    "scripts": {
+    },
+    "stack": "heroku-18"
+  }

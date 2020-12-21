@@ -6,7 +6,7 @@ const MessageSchema = new mongoose.Schema({
         trim: true,
         required: [true, 'please type your name']
     },
-    senderEmail: {
+    email: {
         type: String,
         trim: true,
         required: [true, 'please type your Email']

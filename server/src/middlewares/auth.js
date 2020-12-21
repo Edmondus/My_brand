@@ -11,6 +11,7 @@ const verifyToken = (req, res, next) => {
             if(err){
                 return res.status(401).json({
                     status: 401,
+                    err,
                     message: 'unauthorized, token is not valid',
                   });
             }else{
