@@ -1,0 +1,419 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "description": "My own brand project documentation",
+      "title": "My BRAND",
+      "contact": {
+        "name": "Mai brand",
+        "email": "info@mybrand.com"
+      }
+    },
+    "basePath": "",
+    "tags": [
+      {
+        "name": "User",
+        "description": "User authentication"
+      },
+      {
+          "name": "Messages",
+          "description": "Messages endpoints"
+      },
+      {
+        "name": "Articles",
+        "description": "Articles endpoint"
+    }
+    ],
+    "schemes": [
+        "https",
+        "http"
+      ],
+      "securityDefinitions": {
+        "Bearer": {
+          "type": "apiKey",
+          "name": "authorization",
+          "in": "header"
+        }
+      },
+      "security": [
+        {
+          "Bearer": []
+        }],
+    "definitions": {
+        "signup": {
+            "required": ["userName", "email", "password"],
+            "type": "object",
+            "properties": {
+                "userName": {
+                    "type": "string",
+                    "example": "mai_brand",
+                    "summary": "this is the unique user name"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "info@mybrand.dev",
+                    "summary": "this is the user email"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "Root1123#",
+                    "summary": "this is the user password"
+                }
+            }
+        },
+        "signin": {
+            "required": ["userName", "password"],
+            "type": "object",
+            "properties": {
+                "userName": {
+                    "type": "string",
+                    "example": "mai_brand",
+                    "summary": "this is the unique user name"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "Root1123#",
+                    "summary": "this is the user password"
+                }
+            }
+        },
+        "message": {
+          "required": ["senderName", "email", "messageBody"],
+          "type": "object",
+          "properties": {
+              "senderName": {
+                  "type": "string",
+                  "example": "eric",
+                  "summary": "this is the unique user name"
+              },
+              "email": {
+                  "type": "string",
+                  "example": "eric@gmail.com",
+                  "summary": "this is the user email"
+              },
+              "messageBody": {
+                "type": "string",
+                "example": "keep it up brh ,you will make it!",
+                "summary": "this is the user message"
+            }
+          }
+      },
+      "article": {
+        "required": ["title", "description", "picURL", "content"],
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "example": "ES6",
+                "summary": "this is the article title"
+            },
+            "description": {
+                "type": "string",
+                "example": "some sample description of ES6",
+                "summary": "this is the tittle description"
+            },
+            "picURL": {
+              "type": "string",
+              "example": "https://via.placeholder.com/150",
+              "summary": "this is the article picture URL"
+          },
+          "content": {
+            "type": "string",
+            "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget porttitor enim, id volutpat libero. Integer mattis eros nec sapien congue, quis suscipit massa auctor. Quisque porta risus ut maximus sollicitudin. Sed suscipit metus risus, non gravida neque sagittis non. Morbi in venenatis ligula, quis lacinia nisl. Fusce tincidunt risus non varius finibus.",
+            "summary": "this is the article content"
+        }
+        }
+    }
+    },
+      "paths": {
+        "/user/signup": {
+          "post": {
+            "tags": [
+              "User"
+            ],
+            "summary": "Add a new user",
+            "description": "End point for creating a new user",
+            "consumes": [
+              "application/json"
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "parameters": [
+              {
+                "in": "body",
+                "name": "body",
+                "description": "User object that needs to be added to the store",
+                "required": true,
+                "schema": {
+                  "$ref": "#/definitions/signup"
+                }
+              }
+            ],
+            "responses": {
+              "409": {
+                "description": "User already exists"
+              },
+              "201": {
+                "description": "user created successfully"
+              }
+            }
+          }
+        },
+        "/user/loginuser": {
+            "post": {
+              "tags": [
+                "User"
+              ],
+              "summary": "Signin",
+              "description": "End point for login in an existing user",
+              "consumes": [
+                "application/json"
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "in": "body",
+                  "name": "body",
+                  "description": "User object that needs to be logged in",
+                  "required": true,
+                  "schema": {
+                    "$ref": "#/definitions/signin"
+                  }
+                }
+              ],
+              "responses": {
+                "400": {
+                  "description": "bad request"
+                }
+              }
+            }
+          },
+        "/messages": {
+            "get": {
+              "tags": [
+                "Messages"
+              ],
+              "summary": "Get All Messages",
+              "description": "End point for getting all messages",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+              ],
+              "responses": {
+                "500": {
+                  "description": "server error"
+                },
+                "401": {
+                  "description": "unauthorized"
+                },
+                "200": {
+                  "description": "success"
+                }
+              }
+            }
+          },
+          "/messages/saveMessage": {
+            "post": {
+              "tags": [
+                "Messages"
+              ],
+              "summary": "send a message",
+              "description": "End point for sending a message",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "in": "body",
+                  "name": "body",
+                  "description": "message body",
+                  "required": true,
+                  "schema": {
+                    "$ref": "#/definitions/message"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Message sent"
+                },
+                "500": {
+                  "description": "Server error"
+                }
+              }
+            }
+          },
+          "/articles": {
+            "get": {
+              "tags": [
+                "Articles"
+              ],
+              "summary": "Get All Articles",
+              "description": "End point for getting all articles",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+              ],
+              "responses": {
+                "200": {
+                  "description": "success"
+                },
+                "500": {
+                  "description": "server error"
+                }
+                
+              }
+            }
+          },
+          "/articles/{_id}": {
+            "get": {
+              "tags": [
+                "Articles"
+              ],
+              "summary": "Get one Article",
+              "description": "End point for getting one Article",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "_id",
+                  "description": "id",
+                  "required": true
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "success"
+                },
+                "404": {
+                  "description": "article not found"
+                },
+                "500": {
+                  "description": "server error"
+                }
+                
+              }
+            }
+          },
+          "/articles/saveArticle": {
+            "post": {
+              "tags": [
+                "Articles"
+              ],
+              "summary": "create an article",
+              "description": "End point for creating an article",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "in": "body",
+                  "name": "body",
+                  "description": "article content",
+                  "required": true,
+                  "schema": {
+                    "$ref": "#/definitions/article"
+                  }
+                }
+              ],
+              "responses": {
+                "201": {
+                  "description": "Article creatied successfully"
+                },
+                "401": {
+                  "description": "unauthorized"
+                },
+                "500": {
+                  "description": "Server error"
+                }
+              }
+            }
+          },
+          "/articles/updateArticle/{_id}": {
+            "put": {
+              "tags": [
+                "Articles"
+              ],
+              "summary": "update an Article",
+              "description": "End point for updating an Article",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "_id",
+                  "description": "id",
+                  "required": true
+                },
+                {
+                  "in": "body",
+                  "name": "body",
+                  "description": "updated article",
+                  "required": true,
+                  "schema": {
+                    "$ref": "#/definitions/article"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "success"
+                },
+                "404": {
+                  "description": "article not found"
+                },
+                "401": {
+                  "description": "unauthorized"
+                },
+                "500": {
+                  "description": "server error"
+                }
+                
+              }
+            }
+          },
+          "/articles/deleteArticle/{_id}": {
+            "delete": {
+              "tags": [
+                "Articles"
+              ],
+              "summary": "delete an Article",
+              "description": "End point for deleting an Article",
+              "produces": [
+                "application/json"
+              ],
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "_id",
+                  "description": "id",
+                  "required": true
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "success"
+                },
+                "401": {
+                  "description": "unauthorized"
+                },
+                "404": {
+                  "description": "article not found"
+                },
+                "500": {
+                  "description": "server error"
+                }
+                
+              }
+            }
+          }
+    }
+}
