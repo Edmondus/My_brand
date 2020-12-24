@@ -48,8 +48,8 @@ export const loginUser = async (req, res) => {
       if (!user) {
         return res.status(401).json({
             success: false,
-            status: 400,
-            message: 'invalid email or password'
+            status: 401,
+            message: 'bad request'
           });
       }
       const validPassword = await bcrypt.compare(

@@ -8,7 +8,8 @@
     "test": "mocha --timeout 30000 ./src/tests/**.test.js --require @babel/register --exit",
     "build": "rm -rf ./src/build && babel ./src/. --out-dir ./src/build --copy-files",
     "start": "node ./src/build/index.js",
-    "coverage": "nyc npm test"
+    "cover": "nyc --reporter=html --reporter=text npm test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -28,12 +29,14 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "colors": "^1.4.0",
+    "coveralls": "^3.1.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^8.2.1",
     "mongoose": "^5.10.15",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "swagger-ui-express": "^4.1.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
